@@ -9,6 +9,7 @@
 <body>
 
   <% if signed_in?%>
+  Signed in as: <%= current_user.email%>
   <%= button_to "Sign out", :session, method: :delete%>
   <%else%>
   <%= link_to "Sign up", [:new, :user]%>
