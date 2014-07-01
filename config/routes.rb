@@ -6,13 +6,16 @@ Rails.application.routes.draw do
   
   resources :shouts, only: [:create]
 
+
   resources :users, only: [:show, :new, :create] do  
-    resource :following_relationship, only: [:create]
+    resource :following_relationship, only: [:create, :destroy]
   end
 
 constraints Monban::Constraints::SignedIn.new do
-
-  get "/", to: "dashboards#new", as: "dashboard"
+  root to: "dashboards#new", as: :dashboard
+  resource :following, only: [:show]
+  resource :followers, only: [:show]
+  resource :following_relationship, only: [:create, :destroy]
 end
 
   root to: "sessions#new"
