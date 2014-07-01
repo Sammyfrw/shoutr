@@ -3,10 +3,17 @@
 <%= link_to "Who you're following", :following%>
 <%= link_to "Who follows you", :followers%>
 </div>
-<%= form_for [@shout] do |form|%>
+<%= form_for @subject do |form|%>
   <%= form.label :body, "Shout"%>
   <%= form.text_area :body %>
   <%= form.submit "Submit" %>
 <%end%>
+
+<h2> My Timeline </h2>
+
+<li>
+  <%= render @shouts%>
+  
+</li>
 
 

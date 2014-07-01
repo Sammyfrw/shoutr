@@ -1,5 +1,6 @@
-<%= link_to @user.email, @user%>
-<%= button_to "Follow #{@user.email}", [@user, :following_relationship] %>
+<%=  @user.email%>
+  <%= render "follow_button", user: @user %>
+
 <ul>
   <%= render @shouts%>
 </ul>

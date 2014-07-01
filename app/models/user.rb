@@ -11,7 +11,7 @@ has_many :follower_relationships,
   class_name: "FollowingRelationship",
   foreign_key: :followed_user_id
 
-has_many :followers, through: :followed_user_relationships
+has_many :followers, through: :follower_relationships
  
 
   def follow(other_user)

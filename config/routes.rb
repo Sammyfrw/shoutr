@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   
-  resources :shouts, only: [:create]
+  resources :shouts, only: [:create] do
 
+  end
+  
+  resources :text_subjects, only: [:create]
 
   resources :users, only: [:show, :new, :create] do  
     resource :following_relationship, only: [:create, :destroy]
