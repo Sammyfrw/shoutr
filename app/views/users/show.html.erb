@@ -2,6 +2,7 @@
 <div> User Shouts </div>  
   <%= render "follow_button", user: @user %>
 
+<%= paginate @shouts%>
 <ul>
   <%= render @shouts%>
 </ul>

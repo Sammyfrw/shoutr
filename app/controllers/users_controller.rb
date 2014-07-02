@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by name: (params[:name])
-    @shouts = @user.shouts.all
+    @shouts = @user.shouts.page(params[:page]).per(10)
+
     # @shouts = Shout.where(user_id: @user)
   end
 

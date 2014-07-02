@@ -1,5 +1,12 @@
 <%= link_to @user.name, @user%>
 <div>
+  <%= form_tag("/search", method: "get") do%>
+    <%= label_tag :name, "Search"%>
+    <%= text_field_tag :name%>
+    <%= submit_tag "Search"%>
+  <%end%>
+</div>
+<div>
 <%= link_to "Who you're following", :following%>
 <%= link_to "Who follows you", :followers%>
 </div>
@@ -16,7 +23,7 @@
 <%end%>
 
 <h2> My Timeline </h2>
-
+<%= paginate @shouts%>
 <li>
   <%= render @shouts%>
   

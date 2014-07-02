@@ -8,13 +8,15 @@
 </head>
 <body>
   <h1><%=link_to "Shoutr", root_path %></h1>
-  <% if signed_in?%>
-  Signed in as: <%= current_user.name%>
-  <%= button_to "Sign out", :session, method: :delete%>
-  <%else%>
-  <%= link_to "Sign up", [:new, :user]%>
-  <%=link_to "Sign in", [:new, :session]%>
-  <%end%>
+  <div>
+
+    <% if signed_in?%>
+    Signed in as: <%= current_user.name%>
+    <%= button_to "Sign out", :session, method: :delete%>
+    <%else%>
+    <%= link_to "Sign up", [:new, :user]%>
+    <%=link_to "Sign in", [:new, :session]%>
+    <%end%>
 
 <%= yield %>
 

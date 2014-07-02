@@ -33,7 +33,7 @@ def followed?(other_user)
 end
 
 def timeline
-  Shout.where(user_id: followed_users + [self]).order("created_at DESC" )
+  Shout.where(user_id: followed_users + [self]).order("created_at DESC")
 end
 
 def to_param
