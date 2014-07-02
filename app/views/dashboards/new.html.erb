@@ -3,10 +3,16 @@
 <%= link_to "Who you're following", :following%>
 <%= link_to "Who follows you", :followers%>
 </div>
-<%= form_for @subject do |form|%>
+<%= form_for @text_subject do |form|%>
   <%= form.label :body, "Shout"%>
-  <%= form.text_area :body %>
-  <%= form.submit "Submit" %>
+  <%= form.text_area :body, placeholder: "Shout out here!" %>
+  <%= form.submit "Submit Text Shout" %>
+<%end%>
+
+<%= form_for @image_subject do |form|%>
+  <%= form.label :url, "Shout Image"%>
+  <%= form.text_field :url, placeholder: "Image shout!" %>
+  <%= form.submit "Submit Image Shout"%>
 <%end%>
 
 <h2> My Timeline </h2>

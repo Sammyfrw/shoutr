@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :text_subjects, only: [:create]
+  resources :image_subjects, only: [:create]
 
   resources :users, only: [:show, :new, :create] do  
     resource :following_relationship, only: [:create, :destroy]
