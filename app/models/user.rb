@@ -36,6 +36,10 @@ def timeline
   Shout.where(user_id: followed_users + [self]).order("created_at DESC")
 end
 
+def self.query(search_term)
+  where("name like ?", "%#{search_term}%")
+end
+
 def to_param
   name
 end
