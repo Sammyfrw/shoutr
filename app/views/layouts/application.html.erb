@@ -9,7 +9,7 @@
 <body>
   <h1><%=link_to "Shoutr", root_path %></h1>
   <% if signed_in?%>
-  Signed in as: <%= current_user.email%>
+  Signed in as: <%= current_user.name%>
   <%= button_to "Sign out", :session, method: :delete%>
   <%else%>
   <%= link_to "Sign up", [:new, :user]%>

@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   
   resources :text_subjects, only: [:create]
   resources :image_subjects, only: [:create]
-
+    get ':name', to: 'users#show', as: :user
   resources :users, only: [:show, :new, :create] do  
+
     resource :following_relationship, only: [:create, :destroy]
   end
 
